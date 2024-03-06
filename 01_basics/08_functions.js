@@ -32,7 +32,7 @@ function calculatePrice(num1, num2, ...restNums) {
 }
 // console.log(calculatePrice(10, 20, 30, 40, 50, 60)); //[ 30, 40, 50, 60 ]
 
-//*********  Accessing object    **********
+//*********  PAssig reference to a function  **********
 const user = {
     username: "hitesh",
     prices: 188
