@@ -1,0 +1,47 @@
+/**
+* The keystone of AJAX is the XMLHttpRequest object.
+* -Create an XMLHttpRequest object
+* -Define a callback function
+* -Open the XMLHttpRequest object
+* -Send a Request to a server
+
+*/
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    The readyState property holds the status of the XMLHttpRequest.
+    The onreadystatechange property defines a function to be executed when the readyState changes.
+
+    readyState	Holds the status of the XMLHttpRequest.
+    0: request not initialized
+    1: server connection established
+    2: request received
+    3: processing request
+    4: request finished and response is ready
+    */
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText); //by default we get data in String format, we need to convert to JSON
+            console.log(typeof data);
+            console.log(data);
+            console.log(data.followers);
+        }
+    }
+    xhr.send();
+</script>
+
+</html>
